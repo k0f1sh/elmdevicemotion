@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=960">
+  </head>
+  <div id="main"></div>
+  <script src="main.js"></script>
+  <script>
+    var node = document.getElementById('main');
+    var app = Elm.ElmDeviceMotionAcceleration.embed(node);
+    window.addEventListener('devicemotion', function(event) {
+    app.ports.deviceMotionAcceleration.send({
+    x: event.acceleration.x,
+    y: event.acceleration.y,
+    z: event.acceleration.z
+    });
+    });
+  </script>
+</html>
