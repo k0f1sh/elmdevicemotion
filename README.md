@@ -1,0 +1,1 @@
+elmでdevicemotionの加速度をとってみた
